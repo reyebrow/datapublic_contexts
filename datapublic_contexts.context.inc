@@ -268,5 +268,44 @@ function datapublic_contexts_context_default_contexts() {
   t('Translation block');
   $export['translation_block'] = $context;
 
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'resources';
+  $context->description = '';
+  $context->tag = 'Resources';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'resources' => 'resources',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-documents-block_1' => array(
+          'module' => 'views',
+          'delta' => 'documents-block_1',
+          'region' => 'post_content1',
+          'weight' => '-25',
+        ),
+        'views-datasets-block_2' => array(
+          'module' => 'views',
+          'delta' => 'datasets-block_2',
+          'region' => 'post_content1',
+          'weight' => '-24',
+        ),
+      ),
+    ),
+    'breadcrumb' => 'node/30',
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Resources');
+  $export['resources'] = $context;
+
   return $export;
 }
