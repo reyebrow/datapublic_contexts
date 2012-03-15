@@ -26,9 +26,9 @@ function datapublic_contexts_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-tweets-block' => array(
+        'views-new_tweets-block' => array(
           'module' => 'views',
-          'delta' => 'tweets-block',
+          'delta' => 'new_tweets-block',
           'region' => 'footer',
           'weight' => '-10',
         ),
