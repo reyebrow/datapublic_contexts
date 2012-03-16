@@ -313,5 +313,44 @@ function datapublic_contexts_context_default_contexts() {
   t('Pages');
   $export['media_room'] = $context;
 
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'silverlight_blocks';
+  $context->description = 'Silverlight Map Blocks';
+  $context->tag = 'Silverlight';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'about' => 'about',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        're_silverlight_map-re-silverlight-map-pages-block' => array(
+          'module' => 're_silverlight_map',
+          'delta' => 're-silverlight-map-pages-block',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        're_silverlight_map-re-silverlight-map-events-block' => array(
+          'module' => 're_silverlight_map',
+          'delta' => 're-silverlight-map-events-block',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Silverlight');
+  t('Silverlight Map Blocks');
+  $export['silverlight_blocks'] = $context;
+
   return $export;
 }
